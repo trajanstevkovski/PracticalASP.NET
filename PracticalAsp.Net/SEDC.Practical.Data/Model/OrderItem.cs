@@ -10,7 +10,7 @@ namespace SEDC.Practical.Data.Model
     {
         public int ItemID { get; set; }
         public int OrderID { get; set; }
-        //public OrderStatus ItemStatus { get; set; } // Moze da se promeni
+        public OrderStatus ItemStatus { get; set; } // Moze da se promeni
         public int Quantaty { get; set; }
 
         public virtual Item Item { get; set; }

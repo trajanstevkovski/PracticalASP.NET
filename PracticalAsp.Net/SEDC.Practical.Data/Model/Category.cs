@@ -10,6 +10,7 @@ namespace SEDC.Practical.Data.Model
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+
         public int MenuID { get; set; }
 
         public virtual Menu Menu { get; set; }
