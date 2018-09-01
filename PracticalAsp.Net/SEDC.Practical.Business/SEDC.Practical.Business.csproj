@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8FC105CA-51DB-4E39-B9DD-F7680A5CD005}</ProjectGuid>
+    <ProjectGuid>{9E48BAE4-D483-4F19-BCCF-AA3297E898CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SEDC.Practical.Data</RootNamespace>
-    <AssemblyName>SEDC.Practical.Data</AssemblyName>
+    <RootNamespace>SEDC.Practical.Business</RootNamespace>
+    <AssemblyName>SEDC.Practical.Business</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,21 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Category.cs" />
-    <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\Menu.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\OrderItem.cs" />
-    <Compile Include="Model\OrderStatus.cs" />
+    <Compile Include="Model\DtoMenu.cs" />
+    <Compile Include="Model\MenuType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\BaseRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\MenuRepository.cs" />
-    <Compile Include="RestorantContext.cs" />
+    <Compile Include="Service\BaseService.cs" />
+    <Compile Include="Service\IService.cs" />
+    <Compile Include="Service\MenuService.cs" />
+    <Compile Include="Service\ServiceResult.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\SEDC.Practical.Data\SEDC.Practical.Data.csproj">
+      <Project>{8fc105ca-51db-4e39-b9dd-f7680a5cd005}</Project>
+      <Name>SEDC.Practical.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

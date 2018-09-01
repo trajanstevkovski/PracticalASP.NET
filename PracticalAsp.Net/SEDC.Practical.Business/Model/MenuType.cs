@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SEDC.Practical.Data.Model
+namespace SEDC.Practical.Business.Model
 {
     public enum MenuType
     {
