@@ -68,6 +68,16 @@ namespace SEDC.Practical.Business.Service
         {
             try
             {
+                using(var service = new MenuService())
+                {
+                    if (!service.LoadAll().Items.Any(m => m.MenuID == item.MenuID))
+                        return new ServiceResult<DtoCategory>
+                        {
+                            Success = false,
+                            ErrorMessage = "Menu id does not exist in this context"
+                        };
+                }
+                // Treba da se napravi proverka dali postoi MenuID
                 var result = Repository.Create(new Category()
                 {
                     CategoryName = item.CategoryName,
@@ -95,6 +105,15 @@ namespace SEDC.Practical.Business.Service
         {
             try
             {
+                using (var service = new MenuService())
+                {
+                    if (!service.LoadAll().Items.Any(m => m.MenuID == item.MenuID))
+                        return new ServiceResult<DtoCategory>
+                        {
+                            Success = false,
+                            ErrorMessage = "Menu id does not exist in this context"
+                        };
+                }
                 Repository.Insert(new Category()
                 {
                     CategoryID = item.CategoryID,

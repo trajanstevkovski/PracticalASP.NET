@@ -21,10 +21,16 @@ namespace SEDC.Practical.WebApp.Tests.Services
                 CategoryName = "Drink",
                 MenuID = 2
             };
+            DtoCategory category3 = new DtoCategory()
+            {
+                CategoryName = "Wines",
+                MenuID = 10
+            };
 
             var service = new CategoryService();
             var result1 = service.Add(category1);
             var result2 = service.Add(category2);
+            var result3 = service.Add(category3);
             var resultCategories = service.LoadAll();
 
             Assert.IsNotNull(result1);
@@ -33,8 +39,12 @@ namespace SEDC.Practical.WebApp.Tests.Services
             Assert.IsNotNull(result2);
             Assert.IsTrue(result2.Success);
 
+            Assert.IsNotNull(result3);
+            Assert.IsFalse(result3.Success);
+
             Assert.IsNotNull(resultCategories);
             Assert.IsTrue(resultCategories.Success);
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SEDC.Practical.Data.Repository
     public class BaseRepository : IDisposable
     {
         private RestorantContext _dbContext;
-
+        
         public RestorantContext DbContext => _dbContext;
 
         public BaseRepository()
